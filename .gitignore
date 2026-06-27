@@ -24,4 +24,5 @@ TestResults.xml
 
 .gitignore
 */export/*
-*/schedule-tasks*
+# Ignore files whose names start with scheduled-tasks in any folder
+**/scheduled-tasks*
