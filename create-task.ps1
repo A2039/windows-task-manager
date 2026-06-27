@@ -19,7 +19,16 @@ if (!(Test-Path $scriptPath)) {
     exit
 }
 
-$command = "powershell.exe -NoProfile -ExecutionPolicy Bypass -File `"$scriptPath`""
+Write-Host ""
+
+$runHidden = Read-Host "Run Hidden? (Y/N)"
+
+if ($runHidden.ToUpper() -eq "Y") {
+	$command = "powershell.exe -NoProfile -WindowStyle Hidden -ExecutionPolicy Bypass -File `"$scriptPath`""
+}
+else {
+	$command = "powershell.exe -NoProfile -ExecutionPolicy Bypass -File `"$scriptPath`""
+}
 
 Write-Host ""
 Write-Host "Select Trigger"
